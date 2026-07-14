@@ -7,10 +7,6 @@ from antlr4 import InputStream, CommonTokenStream
 from miniSQLLexer import miniSQLLexer
 
 def obtener_tokens(consulta: str):
-    """
-    Recibe una consulta SQL como texto y devuelve una lista de diccionarios
-    con tipo, lexema y posición de cada token reconocido.
-    """
     input_stream = InputStream(consulta)
     lexer = miniSQLLexer(input_stream)
     stream = CommonTokenStream(lexer)

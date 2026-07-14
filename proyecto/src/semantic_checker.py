@@ -7,7 +7,7 @@ def verificar_semantica(ast: dict):
 
     if tabla not in SCHEMA:
         errores.append(f"La tabla '{tabla}' no existe en el esquema.")
-        return errores  # si la tabla no existe, no tiene caso seguir revisando columnas
+        return errores 
 
     columnas_validas = SCHEMA[tabla]
 

@@ -50,10 +50,7 @@ class ASTBuilder(miniSQLVisitor):
 
 
 def parsear(consulta: str):
-    """
-    Recibe la consulta como texto y devuelve una tupla (ast, errores).
-    Si hay errores sintácticos, ast será None y errores tendrá el detalle.
-    """
+
     input_stream = InputStream(consulta)
     lexer = miniSQLLexer(input_stream)
     lexer.removeErrorListeners()
