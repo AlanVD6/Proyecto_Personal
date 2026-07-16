@@ -13,7 +13,7 @@ from evaluator import ejecutar_consulta
 st.set_page_config(page_title="Mini Compilador SQL", layout="wide")
 st.title("Mini Compilador de Consultas SQL")
 
-st.write("Escribe una consulta SQL simplificada. Ejemplo: `SELECT nombre, edad FROM estudiantes WHERE edad > 18`")
+st.write("Escribe una consulta SQL. Ejemplo: `SELECT nombre, edad FROM estudiantes WHERE edad > 18`")
 
 consulta = st.text_area("Consulta SQL", height=100)
 
