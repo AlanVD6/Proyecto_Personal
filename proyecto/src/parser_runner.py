@@ -9,7 +9,6 @@ from miniSQLLexer import miniSQLLexer
 from miniSQLParser import miniSQLParser
 from miniSQLVisitor import miniSQLVisitor
 
-
 class ColectorDeErrores(ErrorListener):
     def __init__(self):
         super().__init__()
@@ -47,7 +46,6 @@ class ASTBuilder(miniSQLVisitor):
             valor = valor_texto.strip("'")
 
         return {"columna": columna, "operador": operador, "valor": valor}
-
 
 def parsear(consulta: str):
 

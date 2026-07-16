@@ -9,7 +9,7 @@ condition : expr (logic_op expr)* ;
 
 expr : ID op value ;
 
-op : EQ | NEQ | LT | GT | LEQ | GEQ ;
+op : IGUAL | DIFERENTE | MENOR_QUE | MAYOR_QUE | MENOR_IGUAL | MAYOR_IGUAL ;
 
 value : INT | STRING ;
 
@@ -25,12 +25,12 @@ OR     : [Oo][Rr] ;
 POR   : '*' ;
 COMA : ',' ;
 
-EQ  : '=' ;
-NEQ : '!=' ;
-LT  : '<' ;
-GT  : '>' ;
-LEQ : '<=' ;
-GEQ : '>=' ;
+IGUAL       : '=' ;
+DIFERENTE   : '!=' ;
+MENOR_QUE   : '<' ;
+MAYOR_QUE   : '>' ;
+MENOR_IGUAL : '<=' ;
+MAYOR_IGUAL : '>=' ;
 
 INT    : [0-9]+ ;
 STRING : '\'' (~['])* '\'' ;

@@ -16,8 +16,9 @@ public class miniSQLParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		SELECT=1, FROM=2, WHERE=3, AND=4, OR=5, POR=6, COMA=7, EQ=8, NEQ=9, LT=10, 
-		GT=11, LEQ=12, GEQ=13, INT=14, STRING=15, ID=16, WS=17;
+		SELECT=1, FROM=2, WHERE=3, AND=4, OR=5, POR=6, COMA=7, IGUAL=8, DIFERENTE=9, 
+		MENOR_QUE=10, MAYOR_QUE=11, MENOR_IGUAL=12, MAYOR_IGUAL=13, INT=14, STRING=15, 
+		ID=16, WS=17;
 	public static final int
 		RULE_query = 0, RULE_columns = 1, RULE_column = 2, RULE_table_name = 3, 
 		RULE_condition = 4, RULE_expr = 5, RULE_op = 6, RULE_value = 7, RULE_logic_op = 8;
@@ -38,8 +39,9 @@ public class miniSQLParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "SELECT", "FROM", "WHERE", "AND", "OR", "POR", "COMA", "EQ", "NEQ", 
-			"LT", "GT", "LEQ", "GEQ", "INT", "STRING", "ID", "WS"
+			null, "SELECT", "FROM", "WHERE", "AND", "OR", "POR", "COMA", "IGUAL", 
+			"DIFERENTE", "MENOR_QUE", "MAYOR_QUE", "MENOR_IGUAL", "MAYOR_IGUAL", 
+			"INT", "STRING", "ID", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -388,12 +390,12 @@ public class miniSQLParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class OpContext extends ParserRuleContext {
-		public TerminalNode EQ() { return getToken(miniSQLParser.EQ, 0); }
-		public TerminalNode NEQ() { return getToken(miniSQLParser.NEQ, 0); }
-		public TerminalNode LT() { return getToken(miniSQLParser.LT, 0); }
-		public TerminalNode GT() { return getToken(miniSQLParser.GT, 0); }
-		public TerminalNode LEQ() { return getToken(miniSQLParser.LEQ, 0); }
-		public TerminalNode GEQ() { return getToken(miniSQLParser.GEQ, 0); }
+		public TerminalNode IGUAL() { return getToken(miniSQLParser.IGUAL, 0); }
+		public TerminalNode DIFERENTE() { return getToken(miniSQLParser.DIFERENTE, 0); }
+		public TerminalNode MENOR_QUE() { return getToken(miniSQLParser.MENOR_QUE, 0); }
+		public TerminalNode MAYOR_QUE() { return getToken(miniSQLParser.MAYOR_QUE, 0); }
+		public TerminalNode MENOR_IGUAL() { return getToken(miniSQLParser.MENOR_IGUAL, 0); }
+		public TerminalNode MAYOR_IGUAL() { return getToken(miniSQLParser.MAYOR_IGUAL, 0); }
 		public OpContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
