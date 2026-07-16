@@ -1,10 +1,10 @@
 from database import DATA
 
 OPERADORES = {
-    "=":  lambda a, b: a == b,
+    "=": lambda a, b: a == b,
     "!=": lambda a, b: a != b,
-    "<":  lambda a, b: a < b,
-    ">":  lambda a, b: a > b,
+    "<": lambda a, b: a < b,
+    ">": lambda a, b: a > b,
     "<=": lambda a, b: a <= b,
     ">=": lambda a, b: a >= b,
 }
