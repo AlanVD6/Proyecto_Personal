@@ -16,8 +16,8 @@ public class miniSQLLexer extends Lexer {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		SELECT=1, FROM=2, WHERE=3, AND=4, OR=5, STAR=6, COMMA=7, EQ=8, NEQ=9, 
-		LT=10, GT=11, LEQ=12, GEQ=13, INT=14, STRING=15, ID=16, WS=17;
+		SELECT=1, FROM=2, WHERE=3, AND=4, OR=5, POR=6, COMA=7, EQ=8, NEQ=9, LT=10, 
+		GT=11, LEQ=12, GEQ=13, INT=14, STRING=15, ID=16, WS=17;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -28,8 +28,8 @@ public class miniSQLLexer extends Lexer {
 
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"SELECT", "FROM", "WHERE", "AND", "OR", "STAR", "COMMA", "EQ", "NEQ", 
-			"LT", "GT", "LEQ", "GEQ", "INT", "STRING", "ID", "WS"
+			"SELECT", "FROM", "WHERE", "AND", "OR", "POR", "COMA", "EQ", "NEQ", "LT", 
+			"GT", "LEQ", "GEQ", "INT", "STRING", "ID", "WS"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -43,8 +43,8 @@ public class miniSQLLexer extends Lexer {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "SELECT", "FROM", "WHERE", "AND", "OR", "STAR", "COMMA", "EQ", 
-			"NEQ", "LT", "GT", "LEQ", "GEQ", "INT", "STRING", "ID", "WS"
+			null, "SELECT", "FROM", "WHERE", "AND", "OR", "POR", "COMA", "EQ", "NEQ", 
+			"LT", "GT", "LEQ", "GEQ", "INT", "STRING", "ID", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();

@@ -1,7 +1,7 @@
 grammar miniSQL;
 
 query : SELECT columns FROM table_name (WHERE condition)? EOF ;
-columns : STAR| column (COMMA column)* ;
+columns : POR| column (COMA column)* ;
 column : ID ;
 table_name : ID ;
 
@@ -15,15 +15,15 @@ value : INT | STRING ;
 
 logic_op : AND | OR ;
 
-// ==== REGLAS DEL LEXER ====
+// REGLAS DEL LEXER 
 SELECT : [Ss][Ee][Ll][Ee][Cc][Tt] ;
 FROM   : [Ff][Rr][Oo][Mm] ;
 WHERE  : [Ww][Hh][Ee][Rr][Ee] ;
 AND    : [Aa][Nn][Dd] ;
 OR     : [Oo][Rr] ;
 
-STAR  : '*' ;
-COMMA : ',' ;
+POR   : '*' ;
+COMA : ',' ;
 
 EQ  : '=' ;
 NEQ : '!=' ;

@@ -16,8 +16,8 @@ public class miniSQLParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		SELECT=1, FROM=2, WHERE=3, AND=4, OR=5, STAR=6, COMMA=7, EQ=8, NEQ=9, 
-		LT=10, GT=11, LEQ=12, GEQ=13, INT=14, STRING=15, ID=16, WS=17;
+		SELECT=1, FROM=2, WHERE=3, AND=4, OR=5, POR=6, COMA=7, EQ=8, NEQ=9, LT=10, 
+		GT=11, LEQ=12, GEQ=13, INT=14, STRING=15, ID=16, WS=17;
 	public static final int
 		RULE_query = 0, RULE_columns = 1, RULE_column = 2, RULE_table_name = 3, 
 		RULE_condition = 4, RULE_expr = 5, RULE_op = 6, RULE_value = 7, RULE_logic_op = 8;
@@ -38,8 +38,8 @@ public class miniSQLParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "SELECT", "FROM", "WHERE", "AND", "OR", "STAR", "COMMA", "EQ", 
-			"NEQ", "LT", "GT", "LEQ", "GEQ", "INT", "STRING", "ID", "WS"
+			null, "SELECT", "FROM", "WHERE", "AND", "OR", "POR", "COMA", "EQ", "NEQ", 
+			"LT", "GT", "LEQ", "GEQ", "INT", "STRING", "ID", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -158,16 +158,16 @@ public class miniSQLParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ColumnsContext extends ParserRuleContext {
-		public TerminalNode STAR() { return getToken(miniSQLParser.STAR, 0); }
+		public TerminalNode POR() { return getToken(miniSQLParser.POR, 0); }
 		public List<ColumnContext> column() {
 			return getRuleContexts(ColumnContext.class);
 		}
 		public ColumnContext column(int i) {
 			return getRuleContext(ColumnContext.class,i);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(miniSQLParser.COMMA); }
-		public TerminalNode COMMA(int i) {
-			return getToken(miniSQLParser.COMMA, i);
+		public List<TerminalNode> COMA() { return getTokens(miniSQLParser.COMA); }
+		public TerminalNode COMA(int i) {
+			return getToken(miniSQLParser.COMA, i);
 		}
 		public ColumnsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -183,11 +183,11 @@ public class miniSQLParser extends Parser {
 			setState(37);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case STAR:
+			case POR:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(28);
-				match(STAR);
+				match(POR);
 				}
 				break;
 			case ID:
@@ -198,11 +198,11 @@ public class miniSQLParser extends Parser {
 				setState(34);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while (_la==COMMA) {
+				while (_la==COMA) {
 					{
 					{
 					setState(30);
-					match(COMMA);
+					match(COMA);
 					setState(31);
 					column();
 					}

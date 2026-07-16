@@ -21,12 +21,12 @@ if st.button("Compilar"):
     if not consulta.strip():
         st.warning("Escribe una consulta antes de compilar.")
     else:
-        # Fase 1: léxica
+        # Fase léxica
         st.subheader("1. Análisis léxico — Tokens")
         tokens = obtener_tokens(consulta)
         st.table(tokens)
 
-        # Fase 2: sintáctica
+        # Fase sintáctica
         st.subheader("2. Análisis sintáctico — AST")
         ast, errores_sintacticos = parsear(consulta)
 
@@ -37,7 +37,7 @@ if st.button("Compilar"):
         else:
             st.json(ast)
 
-            # Fase 3: semántica
+            # Fase semántica
             st.subheader("3. Análisis semántico")
             errores_semanticos = verificar_semantica(ast)
 
@@ -48,7 +48,7 @@ if st.button("Compilar"):
             else:
                 st.success("La consulta es semánticamente válida.")
 
-                # Fase 4: evaluación
+                # Fase evaluación
                 st.subheader("4. Resultado de la consulta")
                 resultado = ejecutar_consulta(ast)
                 st.table(resultado)

@@ -1,4 +1,3 @@
-# Generated from grammar/miniSQL.g4 by ANTLR 4.13.2
 from antlr4 import *
 from io import StringIO
 import sys
@@ -63,8 +62,8 @@ class miniSQLLexer(Lexer):
     WHERE = 3
     AND = 4
     OR = 5
-    STAR = 6
-    COMMA = 7
+    POR = 6
+    COMA = 7
     EQ = 8
     NEQ = 9
     LT = 10
@@ -84,10 +83,10 @@ class miniSQLLexer(Lexer):
             "'*'", "','", "'='", "'!='", "'<'", "'>'", "'<='", "'>='" ]
 
     symbolicNames = [ "<INVALID>",
-            "SELECT", "FROM", "WHERE", "AND", "OR", "STAR", "COMMA", "EQ", 
+            "SELECT", "FROM", "WHERE", "AND", "OR", "POR", "COMA", "EQ", 
             "NEQ", "LT", "GT", "LEQ", "GEQ", "INT", "STRING", "ID", "WS" ]
 
-    ruleNames = [ "SELECT", "FROM", "WHERE", "AND", "OR", "STAR", "COMMA", 
+    ruleNames = [ "SELECT", "FROM", "WHERE", "AND", "OR", "POR", "COMA", 
                   "EQ", "NEQ", "LT", "GT", "LEQ", "GEQ", "INT", "STRING", 
                   "ID", "WS" ]
 
