@@ -26,7 +26,7 @@ class ASTBuilder(miniSQLVisitor):
         return {"columns": columnas, "from": tabla, "where": condicion}
 
     def visitColumns(self, ctx):
-        if ctx.STAR():
+        if ctx.POR():
             return ["*"]
         return [c.getText() for c in ctx.column()]
 
