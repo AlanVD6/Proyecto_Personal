@@ -20,7 +20,5 @@ def obtener_tokens(consulta: str):
         tokens.append({
             "tipo": nombre_tipo,
             "lexema": token.text,
-            "linea": token.line,
-            "columna": token.column,
         })
     return tokens
