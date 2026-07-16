@@ -14,7 +14,7 @@ def obtener_tokens(consulta: str):
 
     tokens = []
     for token in stream.tokens:
-        if token.type == -1:  # EOF
+        if token.type == -1:  
             continue
         nombre_tipo = lexer.symbolicNames[token.type]
         tokens.append({
